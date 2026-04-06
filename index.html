@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Lavandería | Tu Negocio bajo Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clickBlue: '#00A3FF',
+                        clickDark: '#0E1117',
+                        clickGray: '#161B22',
+                    }
+                }
+            }
+        }
+        
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+    <style>
+        body { background-color: #0E1117; color: white; font-family: 'Inter', sans-serif; }
+        .whatsapp-float {
+            position: fixed; bottom: 20px; right: 20px;
+            background-color: #25d366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 1000; transition: transform 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .feature-card { transition: all 0.3s ease; border: 1px solid #30363d; }
+        .feature-card:hover { border-color: #00A3FF; transform: translateY(-5px); background: #1c2128; }
+    </style>
+</head>
+<body>
+
+    <nav class="sticky top-0 z-50 bg-clickDark/90 backdrop-blur-md border-b border-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="clic_lavanderia.png" alt="Logo" class="h-8 w-auto">
+                <span class="text-xl font-bold italic">Click<span class="text-clickBlue font-normal not-italic text-xs">Lavandería.com</span></span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 items-center font-medium">
+                <a href="#funciones" class="hover:text-clickBlue transition">Funciones</a>
+                <a href="#precios" class="hover:text-clickBlue transition">Precios</a>
+                <a href="https://milavanderia.clicklavanderia.com/" target="_blank" class="bg-clickBlue text-white px-5 py-2 rounded-lg font-bold hover:bg-blue-600 transition">Probar Demo</a>
+            </div>
+
+            <button class="md:hidden text-2xl" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-clickGray absolute left-0 w-full p-6 border-b border-gray-700 flex flex-col gap-4 shadow-xl">
+            <a href="#funciones" onclick="toggleMenu()" class="text-lg border-b border-gray-800 pb-2">Funciones</a>
+            <a href="#precios" onclick="toggleMenu()" class="text-lg border-b border-gray-800 pb-2">Precios</a>
+            <a href="#registro" onclick="toggleMenu()" class="text-lg border-b border-gray-800 pb-2">Registrarme</a>
+            <a href="https://milavanderia.clicklavanderia.com/" target="_blank" class="bg-clickBlue text-center py-3 rounded-xl font-bold">PROBAR DEMO GRATIS</a>
+        </div>
+    </nav>
+
+    <header class="container mx-auto px-6 py-16 md:py-24 text-center">
+        <img src="clic_lavanderia.png" alt="Logo Grande" class="h-24 md:h-32 w-auto mx-auto mb-8 drop-shadow-[0_0_15px_rgba(0,163,255,0.3)]">
+        <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+            Administra tu lavandería <br class="hidden md:block"> con un <span class="text-clickBlue">Click</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+            Deja de perder dinero en tickets perdidos y cuentas que no cuadran. El sistema diseñado por dueños de lavanderías para dueños de lavanderías.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="#registro" class="bg-clickBlue hover:bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-xl transition-all shadow-lg shadow-blue-500/20 uppercase">¡Empezar a ganar ahora!</a>
+        </div>
+    </header>
+
+    <section id="funciones" class="py-20 bg-clickGray/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Todo lo que necesitas para dominar tu negocio</h2>
+                <p class="text-gray-400">Diseñado específicamente para las necesidades reales de una lavandería moderna.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="feature-card p-6 rounded-2xl">
+                    <i class="fas fa-file-invoice text-clickBlue text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Nueva Orden Instantánea</h3>
+                    <p class="text-sm text-gray-400">Registra servicios y genera tickets profesionales en segundos. Rapidez que tus clientes notarán.</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl">
+                    <i class="fas fa-spinner text-clickBlue text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Seguimiento de Estatus</h3>
+                    <p class="text-sm text-gray-400">Control total: Recibido, En Proceso, Lista para entrega o Pago Pendiente. ¡Nada se te escapa!</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl">
+                    <i class="fas fa-cash-register text-clickBlue text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Cobros del Día</h3>
+                    <p class="text-sm text-gray-400">Corte de caja exacto. Sabrás cuánto dinero hay físicamente y cuánto debes recibir al final del turno.</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl">
+                    <i class="fas fa-tags text-clickBlue text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Configurador de Promos</h3>
+                    <p class="text-sm text-gray-400">Crea ofertas 3x2 o promociones por día (ej: Martes de edredones). ¡Atrae más clientes!</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl">
+                    <i class="fas fa-address-book text-clickBlue text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Directorio de Clientes</h3>
+                    <p class="text-sm text-gray-400">Registra nombres, apodos y teléfonos. Envía el ticket digital directo a su WhatsApp.</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl">
+                    <i class="fas fa-clock text-clickBlue text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Horarios Inteligentes</h3>
+                    <p class="text-sm text-gray-400">El sistema calcula automáticamente el día y hora de entrega según tus horarios de atención.</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl">
+                    <i class="fas fa-ruler-combined text-clickBlue text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Unidades de Medida</h3>
+                    <p class="text-sm text-gray-400">Personaliza tus cobros por Kilos, Piezas, Docenas o Cargas Mínimas. Tú pones las reglas.</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl">
+                    <i class="fas fa-chart-bar text-clickBlue text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Reportes de Ingresos</h3>
+                    <p class="text-sm text-gray-400">Sumarios detallados e ingresos por tipo de servicio. Toma decisiones basadas en datos reales.</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl">
+                    <i class="fab fa-whatsapp text-clickBlue text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">WhatsApp Marketing</h3>
+                    <p class="text-sm text-gray-400">Genera enlaces de mensajes personalizados para enviar avisos masivos a tus clientes de forma técnica y segura.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gradient-to-r from-clickBlue/20 to-transparent">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-black mb-6 uppercase tracking-tighter italic">¿No me crees? <span class="text-clickBlue">Pruébalo ahora</span></h2>
+            <p class="text-gray-300 mb-8 max-w-xl mx-auto">Accede a nuestra versión Demo y descubre por qué las lavanderías más eficientes ya están usando nuestro software.</p>
+            <div class="bg-clickDark p-6 rounded-2xl border border-clickBlue inline-block mb-8">
+                <p class="text-xs text-gray-500 uppercase mb-2">Credenciales de acceso:</p>
+                <p class="font-mono text-lg text-clickBlue">Usuario: <span class="text-white">demo</span> | Pass: <span class="text-white">demo123</span></p>
+            </div>
+            <br>
+            <a href="https://milavanderia.clicklavanderia.com/" target="_blank" class="bg-white text-clickDark px-8 py-4 rounded-xl font-black hover:bg-gray-200 transition">ENTRAR A LA DEMO PROFESIONAL</a>
+        </div>
+    </section>
+
+    <section id="precios" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-black text-center mb-16">Invierte en tu tranquilidad</h2>
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+                
+                <div class="w-full max-w-sm p-8 rounded-3xl bg-clickGray border border-gray-800">
+                    <h3 class="text-xl font-bold mb-2">Plan Básico</h3>
+                    <div class="text-5xl font-black mb-6">$300<span class="text-lg font-normal text-gray-500">/mes</span></div>
+                    <ul class="space-y-4 mb-8 text-gray-400">
+                        <li><i class="fas fa-check text-clickBlue mr-2"></i> 1 Usuario admin</li>
+                        <li><i class="fas fa-check text-clickBlue mr-2"></i> Hasta 25 clientes</li>
+                        <li><i class="fas fa-check text-clickBlue mr-2"></i> Reportes financieros</li>
+                    </ul>
+                    <a href="#registro" class="block text-center py-4 border border-gray-700 rounded-xl font-bold hover:border-clickBlue transition">Lo quiero</a>
+                </div>
+
+                <div class="w-full max-w-sm p-8 rounded-3xl bg-clickDark border-4 border-clickBlue relative scale-110 shadow-2xl shadow-blue-500/20">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-clickBlue text-white px-6 py-1 rounded-full font-black text-sm uppercase">Más Popular</div>
+                    <h3 class="text-2xl font-bold mb-2 text-clickBlue">Crecimiento</h3>
+                    <p class="text-gray-400 text-sm mb-6">Paga solo por lo que usas</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center"><i class="fas fa-plus-circle text-clickBlue mr-3"></i> <span><b>$50</b> / Usuario extra</span></li>
+                        <li class="flex items-center"><i class="fas fa-plus-circle text-clickBlue mr-3"></i> <span><b>$50</b> / Bloque 25 clientes</span></li>
+                        <li class="flex items-center"><i class="fas fa-star text-yellow-400 mr-3 text-xl"></i> <span class="font-bold">Funciones ilimitadas</span></li>
+                    </ul>
+                    <a href="#registro" class="block text-center py-5 bg-clickBlue text-white rounded-2xl font-black text-xl hover:scale-105 transition">ADQUIRIR AHORA</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registro" class="py-20 bg-white text-clickDark">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black mb-4">¿Listo para dar el siguiente paso?</h2>
+                <p class="text-lg opacity-80">Regístrate y activa tu sistema hoy mismo. No dejes pasar más tiempo.</p>
+            </div>
+            
+            <form action="https://formsubmit.co/reyesgama@gmail.com" method="POST" class="space-y-6">
+                <input type="hidden" name="_next" value="https://clicklavanderia.com/gracias">
+                <input type="hidden" name="_subject" value="🔥 Nueva Lavandería Interesada">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 italic">
+                    <div class="flex flex-col">
+                        <label class="text-xs font-bold uppercase mb-1">Nombre Comercial *</label>
+                        <input type="text" name="nombre_comercial" required class="border-2 border-gray-200 p-4 rounded-xl focus:border-clickBlue outline-none" placeholder="Ej: Lavandería Burbujas">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-xs font-bold uppercase mb-1">WhatsApp de Contacto *</label>
+                        <input type="tel" name="telefono" required inputmode="tel" class="border-2 border-gray-200 p-4 rounded-xl focus:border-clickBlue outline-none" placeholder="10 dígitos">
+                    </div>
+                </div>
+                <div class="flex flex-col italic">
+                    <label class="text-xs font-bold uppercase mb-1">Email (Para enviar tus accesos)</label>
+                    <input type="email" name="email" inputmode="email" class="border-2 border-gray-200 p-4 rounded-xl focus:border-clickBlue outline-none" placeholder="tu@email.com">
+                </div>
+                <div class="flex flex-col italic">
+                    <label class="text-xs font-bold uppercase mb-1">Dirección de la Lavandería</label>
+                    <input type="text" name="direccion" class="border-2 border-gray-200 p-4 rounded-xl focus:border-clickBlue outline-none" placeholder="Calle, Número y Colonia">
+                </div>
+                <button type="submit" class="w-full bg-clickDark text-white py-6 rounded-2xl font-black text-2xl hover:bg-clickBlue transition shadow-xl uppercase">Enviar solicitud de activación</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black border-t border-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500 font-bold mb-4 italic uppercase tracking-tighter">Click Lavandería &copy; 2026</p>
+            <div class="flex justify-center gap-8 opacity-40 mb-8 text-2xl">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+            <p class="text-[10px] text-gray-700 uppercase tracking-[0.3em]">Software de alto rendimiento para negocios ganadores.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5217771555794" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
