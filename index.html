@@ -23,6 +23,21 @@
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
+
+        // Función para cerrar el Pop-up
+        function closePopup() {
+            document.getElementById('success-popup').classList.add('hidden');
+            // Limpiar la URL para que no aparezca el popup al recargar
+            window.history.replaceState({}, document.title, "/");
+        }
+
+        // Detectar si regresa del formulario con éxito
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('sent') === 'true') {
+                document.getElementById('success-popup').classList.remove('hidden');
+            }
+        }
     </script>
     <style>
         body { background-color: #0E1117; color: white; font-family: 'Inter', sans-serif; }
@@ -37,9 +52,31 @@
         .whatsapp-float:hover { transform: scale(1.1); }
         .feature-card { transition: all 0.3s ease; border: 1px solid #30363d; }
         .feature-card:hover { border-color: #00A3FF; transform: translateY(-5px); background: #1c2128; }
+        
+        /* Animación para el popup */
+        .animate-pop { animation: pop 0.3s cubic-bezier(0.26, 0.53, 0.74, 1.48); }
+        @keyframes pop {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
+
+    <div id="success-popup" class="hidden fixed inset-0 z-[1001] flex items-center justify-center px-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-white text-clickDark p-8 rounded-3xl max-w-md w-full text-center shadow-2xl animate-pop">
+            <div class="bg-green-100 text-green-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check-circle text-5xl"></i>
+            </div>
+            <h3 class="text-2xl font-black mb-4">¡Solicitud Enviada!</h3>
+            <ul class="text-left space-y-4 mb-8 text-gray-700 font-medium">
+                <li class="flex gap-3"><i class="fas fa-arrow-right text-clickBlue mt-1"></i> Muchas gracias por enviar la información de su lavandería.</li>
+                <li class="flex gap-3"><i class="fas fa-arrow-right text-clickBlue mt-1"></i> En menos de 24 horas, será atendida su solicitud, para la activación de su servicio.</li>
+                <li class="flex gap-3"><i class="fas fa-arrow-right text-clickBlue mt-1"></i> Nos comunicaremos con Usted vía WhatsApp para mejor atención.</li>
+            </ul>
+            <button onclick="closePopup()" class="w-full bg-clickBlue text-white py-4 rounded-xl font-black text-lg hover:bg-blue-600 transition uppercase shadow-lg shadow-blue-500/30">Entendido</button>
+        </div>
+    </div>
 
     <nav class="sticky top-0 z-50 bg-clickDark/90 backdrop-blur-md border-b border-gray-800 p-4">
         <div class="container mx-auto flex justify-between items-center">
@@ -78,7 +115,7 @@
         </p>
 
         <div class="bg-clickBlue/10 border border-clickBlue/30 rounded-2xl p-4 mb-10 max-w-xl mx-auto flex items-center gap-4 text-left">
-            <div class="bg-clickBlue p-3 rounded-full hidden sm:block">
+            <div class="bg-clickBlue p-3 rounded-full shrink-0">
                 <i class="fas fa-mobile-alt text-2xl"></i>
             </div>
             <p class="text-sm md:text-base text-gray-300">
@@ -201,7 +238,7 @@
             </div>
             
             <form action="https://formsubmit.co/reyesgama@gmail.com" method="POST" class="space-y-6">
-                <input type="hidden" name="_next" value="https://clicklavanderia.com/">
+                <input type="hidden" name="_next" value="https://clicklavanderia.com/?sent=true">
                 <input type="hidden" name="_subject" value="🔥 Nueva Lavandería Interesada">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
