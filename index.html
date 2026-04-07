@@ -73,9 +73,20 @@
         <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
             Administra tu lavandería <br class="hidden md:block"> con un <span class="text-clickBlue">Click</span>
         </h1>
-        <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+        <p class="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto">
             Deja de perder dinero en tickets perdidos y cuentas que no cuadran. El sistema diseñado por dueños de lavanderías para dueños de lavanderías.
         </p>
+
+        <div class="bg-clickBlue/10 border border-clickBlue/30 rounded-2xl p-4 mb-10 max-w-xl mx-auto flex items-center gap-4 text-left">
+            <div class="bg-clickBlue p-3 rounded-full hidden sm:block">
+                <i class="fas fa-mobile-alt text-2xl"></i>
+            </div>
+            <p class="text-sm md:text-base text-gray-300">
+                <strong class="text-white">¡Lleva tu negocio en el bolsillo!</strong><br>
+                Accede desde cualquier smartphone con internet. Solo necesitas un navegador (Chrome o Safari) y conexión 4G/5G o Wi-Fi.
+            </p>
+        </div>
+
         <div class="flex flex-col md:flex-row justify-center gap-4">
             <a href="#registro" class="bg-clickBlue hover:bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-xl transition-all shadow-lg shadow-blue-500/20 uppercase">¡Empezar a ganar ahora!</a>
         </div>
@@ -190,8 +201,10 @@
             </div>
             
             <form action="https://formsubmit.co/reyesgama@gmail.com" method="POST" class="space-y-6">
-                <input type="hidden" name="_next" value="https://clicklavanderia.com/gracias">
+                <input type="hidden" name="_next" value="https://clicklavanderia.com/">
                 <input type="hidden" name="_subject" value="🔥 Nueva Lavandería Interesada">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 italic">
                     <div class="flex flex-col">
